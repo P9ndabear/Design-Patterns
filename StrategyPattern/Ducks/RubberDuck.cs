@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StrategyPattern.Interfaces.FlyBehavior;
+using StrategyPattern.Interfaces.QuackBehavior;
+using StrategyPattern.Interfaces.SwimBehavior;
 
 namespace StrategyPattern.Ducks
 {
@@ -10,7 +13,9 @@ namespace StrategyPattern.Ducks
     {
         public RubberDuck()
         {
-
+            flyBehavior = new FlyNoWay();
+            quackBehavior = new Squeak();
+            swimBehavior = new SwimFloating();
         }
         public override void Display()
         {

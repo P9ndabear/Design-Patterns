@@ -9,17 +9,18 @@ using StrategyPattern.Interfaces.SwimBehavior;
 
 namespace StrategyPattern.Ducks
 {
-    internal class DecoyDuck : Duck
+    internal class RobotDuck : Duck
     {
-        public DecoyDuck()
+        public RobotDuck()
         {
+            quackBehavior = new RegularQuack();
             flyBehavior = new FlyNoWay();
-            quackBehavior = new MuteQuack();
-            swimBehavior = new SwimFloating();
+            swimBehavior = new SwimSinking();
         }
+
         public override void Display()
         {
-            Console.WriteLine("I'm a Decoy Duck");
+            Console.WriteLine("I'm a Robot Duck");
         }
     }
 }
