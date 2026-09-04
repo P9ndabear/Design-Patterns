@@ -1,6 +1,7 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using StrategyPattern.Ducks;
 using StrategyPattern.Interfaces.FlyBehavior;
+using StrategyPattern.Interfaces.QuackBehavior;
 
 namespace StrategyPattern
 {
@@ -9,36 +10,27 @@ namespace StrategyPattern
         static void Main(string[] args)
         {
             Duck mallardDuck = new MallardDuck();
+            performAllAction(mallardDuck);
             Duck redheadDuck = new RedheadDuck();
+            performAllAction(redheadDuck);
             Duck decoyDuck = new DecoyDuck();
+            performAllAction(decoyDuck);
             Duck rubberDuck = new RubberDuck();
+            performAllAction(rubberDuck);
             Duck robotDuck = new RobotDuck();
-
-            mallardDuck.Display();
-            mallardDuck.PerformQuack();
-            mallardDuck.PerformFly();
-            mallardDuck.PerformSwim();
-
-            redheadDuck.Display();
-            redheadDuck.PerformQuack();
-            redheadDuck.PerformFly();
-            redheadDuck.PerformSwim();
-
-            decoyDuck.Display();
-            decoyDuck.PerformQuack();
-            decoyDuck.PerformFly();
-            decoyDuck.PerformSwim();
-
-            rubberDuck.Display();
-            rubberDuck.PerformQuack();
-            rubberDuck.PerformFly();
-            rubberDuck.PerformSwim();
-
-            robotDuck.Display();
-            robotDuck.PerformQuack();
-            robotDuck.PerformFly();
-            robotDuck.PerformSwim();
-
+            performAllAction(robotDuck);
+            Duck modelDuck = new ModelDuck();
+            modelDuck.PerformFly();
+            modelDuck.SetFlyBehavior(new FlyWithRocket());
+            modelDuck.PerformFly();
         }
-    }
+
+        public static void performAllAction(Duck duck)
+        {
+            duck.Display();
+            duck.PerformQuack();
+            duck.PerformFly();
+            duck.PerformSwim();
+        }
+     }
 }

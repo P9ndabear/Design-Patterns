@@ -45,5 +45,14 @@ namespace StrategyPattern.Ducks
 
         }
 
+        public void SetFlyBehavior(FlyBehavior flyBehavior)
+        {
+            this.flyBehavior = flyBehavior;
+        }
+
+        public void setQuackBehavior(QuackBehavior quackBehavior)
+        {
+            this.quackBehavior = quackBehavior;
+        }
     }
 }
