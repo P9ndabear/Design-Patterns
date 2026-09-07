@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Design Patterns/Design Patterns.csproj" Id="5f8e39a5-497e-4792-8f03-1e71a8a29e5b" />
+  <Project Path="ObserverPattern/ObserverPattern.csproj" />
   <Project Path="StrategyPattern/StrategyPattern.csproj" />
 </Solution>
