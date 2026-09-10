@@ -9,10 +9,13 @@ namespace ObserverPattern
             WeatherData weatherData = new WeatherData();
 
             // Create instances of displays 
+            new CurrentConditionDisplay(weatherData);
+            new ForecastDisplay(weatherData);
+            new StatisticsDisplay(weatherData);
 
-            weatherData.SetMeasurements(28, 65, 30.4f);
-            weatherData.SetMeasurements(29, 70, 29.2f);
-            weatherData.SetMeasurements(30, 90, 29.2f); 
+            weatherData.SetMeasurements(100, 25, 30.4f);
+            weatherData.SetMeasurements(500, 75, 29.2f);
+            weatherData.SetMeasurements(1000, 100, 29.2f);
         }
     }
 }
