@@ -15,7 +15,7 @@ namespace ObserverPattern
 
             weatherData.SetMeasurements(100, 25, 30.4f);
             weatherData.SetMeasurements(500, 75, 29.2f);
-            weatherData.SetMeasurements(1000, 100, 29.2f);
+            weatherData.SetMeasurements(1000, 125, 29.2f);
         }
     }
 }
