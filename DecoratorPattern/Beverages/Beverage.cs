@@ -17,6 +17,8 @@ namespace DecoratorPattern.Beverages
         public Size Size { get { return size; } set { size = value; } }
         private Size size;
 
+        public string Name { get; set; }
+
         protected string description = "Unknown";
         protected Beverage baseBeverage = null;
         
