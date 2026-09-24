@@ -17,7 +17,6 @@ namespace DecoratorPattern.Beverages
         public Size Size { get { return size; } set { size = value; } }
         private Size size;
 
-        public string Name { get; set; }
 
         protected string description = "Unknown";
         protected Beverage baseBeverage = null;
@@ -28,6 +27,20 @@ namespace DecoratorPattern.Beverages
             return description;
         }
 
-        public abstract double cost();
+        public virtual double cost()
+        {
+            switch (Size)
+            {
+                case Size.TALL:
+                    return 300000.99;
+                case Size.GRANDE:
+                    return 600000.49;
+                case Size.VENDI:
+                    return 900000.99;
+                default:
+                    break;
+            }
+            return 0.0;
+        }
     }
 }
