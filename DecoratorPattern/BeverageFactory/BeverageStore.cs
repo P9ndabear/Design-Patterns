@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DecoratorPattern.Beverages;
 
 namespace DecoratorPattern.BeverageFactory
 {
-    internal class BeverageStore
+    internal abstract class BeverageStore
     {
+        public Beverage OrderBeverage(string type, Size size)
+        {
+            Beverage beverage = CreateBeverage(type, size);
+
+            return beverage;
+        }
+
+        public abstract Beverage CreateBeverage(string type, Size size);
     }
-}
+}   
