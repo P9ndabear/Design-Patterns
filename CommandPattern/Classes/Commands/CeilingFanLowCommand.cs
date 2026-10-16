@@ -10,7 +10,7 @@ namespace CommandPattern.Classes.Commands
     internal class CeilingFanLowCommand : Command
     {
         CeilingFan ceilingFan;
-        int prevSpeed;
+        Stack<int> prevSpeeds = new Stack<int>();
 
         public CeilingFanLowCommand(CeilingFan ceilingFan)
         {
@@ -19,13 +19,14 @@ namespace CommandPattern.Classes.Commands
 
         public void Execute()
         {
-            prevSpeed = ceilingFan.GetSpeed();
+            prevSpeeds.Push(ceilingFan.GetSpeed());
             ceilingFan.Low();
         }
 
         public void Undo()
         {
-            switch(prevSpeed)
+            int speed = prevSpeeds.Pop();
+            switch(speed)
             {
                 case 3:
                     ceilingFan.High();

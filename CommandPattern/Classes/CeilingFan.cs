@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CommandPattern.Classes
 {
@@ -15,34 +10,46 @@ namespace CommandPattern.Classes
         public int OFF { get { return 0; } }
         string location;
         int speed;
+
         public CeilingFan(string location)
-        { 
+        {
             this.location = location;
             speed = OFF;
+        }
+
+        private string SpeedName()
+        {
+            switch (speed)
+            {
+                case 3: return "high";
+                case 2: return "medium";
+                case 1: return "low";
+                default: return "off";
+            }
         }
 
         public void High()
         {
             speed = HIGH;
-            Console.WriteLine(location + " is on: " + speed);
+            Console.WriteLine(location + " ceiling fan is on " + SpeedName());
         }
-            
+
         public void Medium()
         {
             speed = MEDIUM;
-            Console.WriteLine(location + " is set on: " + speed);
+            Console.WriteLine(location + " ceiling fan is on " + SpeedName());
         }
 
-        public void Low() 
+        public void Low()
         {
             speed = LOW;
-            Console.WriteLine(location + " is set on: " + speed);
+            Console.WriteLine(location + " ceiling fan is on " + SpeedName());
         }
 
         public void Off()
         {
             speed = OFF;
-            Console.WriteLine(location + " is set on: " + speed);
+            Console.WriteLine(location + " ceiling fan is " + SpeedName());
         }
 
         public int GetSpeed()
