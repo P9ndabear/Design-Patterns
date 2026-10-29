@@ -5,4 +5,5 @@
   <Project Path="ObserverPattern/ObserverPattern.csproj" />
   <Project Path="Singleton/SingletonPattern.csproj" />
   <Project Path="StrategyPattern/StrategyPattern.csproj" />
+  <Project Path="TemplateMethodPattern/TemplateMethodPattern.csproj" />
 </Solution>
